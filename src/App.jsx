@@ -29,6 +29,7 @@ function App() {
         </a>
         <h1 className="flex funny-heading">
           Vite + React + <span className="funny-animate">{count}</span> 😂
+          {process.env.SERVICE_ACCOUNT_KEY}
         </h1>
       </div>
       <div className="card funny-card">
