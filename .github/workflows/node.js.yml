@@ -30,8 +30,10 @@ jobs:
     - run: npm run build --if-present
     
     
-    - name: Set up environment variables
-      run: echo "GITHUB_TOKEN=${{ secrets.SERVICE_ACCOUNT_KEY }}" >> $GITHUB_ENV
+    - name: Set up environment variables for Vite
+      run: |
+        echo "VITE_MYVAR=${{ secrets.VITE_MYVAR }}" >> $GITHUB_ENV
+        echo "VITE_SERVICE_ACCOUNT_KEY=${{ secrets.VITE_SERVICE_ACCOUNT_KEY }}" >> $GITHUB_ENV
 
     - name: Deploy with gh-pages
       run: |
@@ -39,3 +41,5 @@ jobs:
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VITE_MYVAR: ${{ secrets.GIT_MYVAR }}
+        VITE_SERVICE_ACCOUNT_KEY: ${{ secrets.GIT_SERVICE_ACCOUNT_KEY }}

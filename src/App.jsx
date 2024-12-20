@@ -6,7 +6,9 @@ import Example from './List'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const myVar = import.meta.env.VITE_MYVAR;
+  const serviceAccountKey = import.meta.env.VITE_SERVICE_ACCOUNT_KEY;
+  console.log(import.meta.env)
   const handleRandomCount = (type) => {
     const randomFactor = Math.floor(Math.random() * 3) + 1; // Random increment or decrement
     setCount((prevCount) =>
@@ -29,9 +31,10 @@ function App() {
         </a>
         <h1 className="flex funny-heading">
           Vite + React + <span className="funny-animate">{count}</span> 😂
-          {process.env.SERVICE_ACCOUNT_KEY}
         </h1>
       </div>
+      {myVar} <br />
+      {serviceAccountKey} <br />
       <div className="card funny-card">
         <button
           className="funny-button"
@@ -58,13 +61,13 @@ function App() {
         Button
       </button>
       <label className="swap swap-flip text-9xl">
-  {/* this hidden checkbox controls the state */}
-  <input type="checkbox" />
+        {/* this hidden checkbox controls the state */}
+        <input type="checkbox" />
 
-  <div className="swap-on">😈</div>
+        <div className="swap-on">😈</div>
         <div className="swap-off">😇</div>
-        <Example/>
-</label>
+        <Example />
+      </label>
     </>
   );
 }
