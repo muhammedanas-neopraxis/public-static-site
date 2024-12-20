@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -64,5 +68,109 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+
+/* General funny container */
+.funny-container {
+  background-color: #f5f5dc;
+  border: 5px dashed #ff69b4;
+  padding: 20px;
+  border-radius: 15px;
+  animation: funny-background 5s infinite alternate;
+}
+
+/* Funny spin for logos */
+.funny-spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Funny bounce for React logo */
+.funny-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Funny heading */
+.funny-heading {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+  color: #ff4500;
+  font-size: 2rem;
+  text-shadow: 2px 2px #000;
+}
+
+/* Funny animations */
+.funny-animate {
+  display: inline-block;
+  animation: wiggle 0.5s infinite alternate;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Funny card */
+.funny-card {
+  background-color: #ffebcd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+/* Funny buttons */
+.funny-button {
+  background-color: #ff69b4;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.funny-button:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Funny docs */
+.funny-docs {
+  color: #ff4500;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  text-align: center;
+}
+
+/* Funny background animation */
+@keyframes funny-background {
+  0% {
+    background-color: #ffebcd;
+  }
+  100% {
+    background-color: #f5deb3;
   }
 }
